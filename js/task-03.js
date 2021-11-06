@@ -13,13 +13,18 @@ const images = [
   },
 ];
 
-const imagesList = document.querySelector('.gallery');
-console.log(imagesList);
+const imagesContainerList = document.querySelector('.gallery');
+console.log(imagesContainerList);
 
+const makeImages = image => {
+  const { url, alt } = image;
+  return `
+  <li class ="gallery_item">
+  <img src = ${url} alt = ${alt} width = 250px height = 200px />
+  </li>
+  `
+};
 
-images.forEach(image => {
-  imagesList.insertAdjacentHTML(
-    'afterbegin',
-    `<li><img src = "${image.url}" alt = "${image.alt}"  width = "250" height = "200" /></li>`,
-  );
-});
+const imagesElMarkup = images.map(makeImages).join('');
+imagesContainerList.insertAdjacentHTML('afterbegin', imagesElMarkup);
+console.log(imagesElMarkup);

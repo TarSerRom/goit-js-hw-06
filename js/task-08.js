@@ -21,15 +21,22 @@ function onInputChange(event) {
 }
 
 function handleSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
   const {
     elements: { email, password }
   } = event.currentTarget;
 
   if (email.value === "" || password.value === "") {
-    return console.log("Please fill in all the fields!");
+    return alert("Please fill in all the fields!");
   }
 
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
+  const formElements = event.currentTarget.elements;
+
+  const emailEntered = formElements.email.value;
+  const passwordEntered = formElements.password.value;
+  
+  const objRes = { email:emailEntered , password:passwordEntered};
+  console.log(objRes);
+  
   event.currentTarget.reset();
 }

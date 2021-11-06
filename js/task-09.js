@@ -5,12 +5,17 @@ console.log(bodyEl);
 const btn = document.querySelector(`.change-color`);
 console.log(btn);
 
+const colorName = document.querySelector(`.color`);
+
+
 btn.addEventListener('click', e => {
   
   const randomColor = getRandomHexColor();
   console.log(randomColor);
   bodyEl.style.backgroundColor = randomColor;
-  
+
+  colorName.textContent = randomColor;
+
 }
 );
 
