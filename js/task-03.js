@@ -20,7 +20,7 @@ const makeImages = image => {
   const { url, alt } = image;
   return `
   <li class ="gallery_item">
-  <img src = ${url} alt = ${alt} width = 250px height = 200px />
+  <img src = '${url}' alt= '${alt}' width = 250px height = 200px />
   </li>
   `
 };
